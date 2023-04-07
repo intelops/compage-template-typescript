@@ -19,9 +19,9 @@ spec:
         - name: {{.NodeName}}
           image: {{.UserName}}/{{.RepositoryName}}/{{.NodeName}}
           imagePullPolicy: Always
-       {{if .IsServer }}
+       {{if .IsRestServer }}
           ports:
-            - containerPort: {{.ServerPort}}
+            - containerPort: {{.RestServerPort}}
               name: http
           readinessProbe:
             tcpSocket:
